@@ -1,29 +1,3 @@
-/* CSS Index
------------------------------------
-1. Theme default css
-2. header
-3. slider
-4. about
-5. features
-6. services
-7. video
-8. choose
-9. brand
-10. work-process
-11. team
-12. counter
-13. cta
-14. testimonial
-15. blog
-16. pagination
-17. f-cta
-18. pricing
-19. contact
-20. footer
-
-*/
-
-/* 1. Theme default css */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 body {
   font-family: "Roboto", sans-serif;
@@ -229,7 +203,7 @@ label {
 /* button style */
 
 .btn {
-  -moz-user-select: none;
+  /* -moz-user-select: none; */
   background: transparent linear-gradient(90deg, #ff8a010%, #ff8a01100%) 0% 0%
     no-repeat padding-box;
   border: none;
@@ -903,14 +877,27 @@ label {
   color: #36383a;
 }
 
-/* breadcrumb */
 .breadcrumb-area {
   background-size: cover;
   position: relative;
-  min-height: 400px;
+  min-height: 350px;
   background-repeat: no-repeat;
   background-position: 0 center;
   background: #444;
+}
+.breadcrumb-area::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.breadcrumb-area * {
+  position: relative;
+  z-index: 2;
 }
 .breadcrumb {
   display: inline-block;
@@ -952,7 +939,7 @@ label {
   color: #9dd53a;
   font-weight: 500;
 }
-/* 3. slider */
+
 
 .slider-bg {
   min-height: 901px !important;
@@ -9755,8 +9742,7 @@ div.single-cta:last-child {
   margin: auto;
 }
 
-.how-box-contaniner {
-}
+
 .how-box h5 {
   color: #76c21b;
   font-size: 18px;
@@ -9764,4 +9750,53 @@ div.single-cta:last-child {
 .how-box h3 {
   color: #fff;
   font-size: 24px;
+}
+.about-content p{
+  padding-bottom: 30px;
+}
+.type-head{
+  font-size: 30px !important;
+  color: #010f2e !important;
+}
+.newgallery h2{
+  font-size: 30px !important  ;
+}
+.comm-img {
+  position: relative;
+  border-radius: 20px;
+  transition: all 0.4s ease-in-out;
+  border: 1px solid #d1d1d1;
+  overflow: hidden; 
+}
+.comm-img:hover{
+  box-shadow: 1px 1px 10px black;
+  border: none;
+}
+.comm-img::before {
+  content: "Service 1"; 
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #010f2eb3;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: bottom 0.4s ease-in-out;
+  border-radius: 20px;
+}
+
+.comm-img:hover::before {
+  bottom: 0; 
+}
+
+.comm-img img {
+  width: 100%;
+  border-radius: 20px;
+  padding: 20px;
+  cursor: pointer;
 }
